@@ -34,6 +34,11 @@
     :ref "<name>"
     :default "blambda"}
 
+   :endpoint-url
+   {:desc "Override command's default URL with the given URL"
+    :ref "<endpoint>"
+    :default nil}
+
    :target-dir
    {:desc "Build output directory"
     :ref "<dir>"
@@ -44,7 +49,7 @@
     :ref "<dir>"
     :default ".work"}})
 
-(def global-opts #{:target-dir :work-dir})
+(def global-opts #{:target-dir :work-dir :endpoint-url})
 
 (defn apply-defaults [default-opts spec]
   (->> spec
